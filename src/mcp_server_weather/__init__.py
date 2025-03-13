@@ -9,7 +9,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="give a model the ability to handle weather queries"
     )
-    parser.add_argument("--location", type=str, help="Location, eg: 广州 天河")
+    parser.add_argument("--key", type=str, help="和风天气API Key, eg: xxxxx")
 
     args = parser.parse_args()
     asyncio.run(serve(args.location))

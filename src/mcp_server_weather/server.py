@@ -198,10 +198,9 @@ class WeatherService:
                 return "输入的地区不存在，无法提供天气预报"
         
  
-async def serve(local_timezone: str | None = None) -> None:
+async def serve(key: str | None = None) -> None:
     server = Server("mcp-weather")
-    
-    weather_service = WeatherService()
+    weather_service = WeatherService(key=key)
 
     @server.list_tools()
     async def list_tools() -> list[Tool]:
