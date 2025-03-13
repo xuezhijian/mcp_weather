@@ -230,7 +230,7 @@ async def serve(local_timezone: str | None = None) -> None:
         """Handle tool calls for time queries."""
         try:
             match name:
-                case WeatherTools.GET_24H_WEATHER.value:
+                case WeatherTools.GET_24H_WEATHER:
                     location = arguments.get("location")
                     if not location:
                         raise ValueError("Missing required argument: location")
