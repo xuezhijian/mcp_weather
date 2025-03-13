@@ -208,7 +208,7 @@ async def serve(local_timezone: str | None = None) -> None:
         """工具列表"""
         return [
             Tool(
-                name=WeatherTools.GET_NOW_WEATHER.value,
+                name=WeatherTools.GET_NOW_WEATHER,
                 description="Get current weather in a specific location",
                 inputSchema={
                     "type": "object",
@@ -240,7 +240,7 @@ async def serve(local_timezone: str | None = None) -> None:
                     raise ValueError(f"Unknown tool: {name}")
 
             return [
-                TextContent(type="text", text=json.dumps(result.model_dump(), indent=2))
+                TextContent(type="text", text=result)
             ]
 
         except Exception as e:
