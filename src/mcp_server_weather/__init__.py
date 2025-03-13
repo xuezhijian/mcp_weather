@@ -12,7 +12,7 @@ def main():
     parser.add_argument("--key", type=str, help="和风天气API Key, eg: xxxxx")
 
     args = parser.parse_args()
-    asyncio.run(serve(args.location))
+    asyncio.run(serve(args.key))
 
 
 if __name__ == "__main__":
